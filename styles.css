@@ -28,6 +28,19 @@
     list-style: none;
 }
 
+html {
+    /* Esto hace que al pinchar en el menú baje deslizándose suavemente 
+       en vez de dar un salto brusco */
+    scroll-behavior: smooth;
+}
+
+section[id], 
+.panel {
+    /* Aquí está la magia: le decimos al navegador que el "tope" 
+       del elemento está más arriba, sumando la altura del header + un poco de aire */
+    scroll-margin-top: calc(var(--header-height) + 1rem);
+}
+
 html,
 body {
     height: 100%;
@@ -69,13 +82,16 @@ p {
 }
 
 h2,
-h3 {
-    margin-bottom: 1rem;
+h3,
+h4 {
+    margin-bottom: 0.5rem;
+    margin-top: 0.5rem;
     color: var(--fg)
 }
 
 h1 {
     margin-bottom: 0.5rem;
+    margin-top: 0.5rem;
 }
 
 .tema {
@@ -248,6 +264,7 @@ img, picture, video {
     display: flex;
     flex-wrap: wrap;
     gap: 1rem;
+    margin-top: 0.5rem;
 }
 
 .fitxa {
@@ -302,6 +319,62 @@ img, picture, video {
     opacity: 1;
     box-shadow: 0 4px 16px rgba(0,0,0,0.18);
 }
+
+/* --- ESTILOS DEL DESPLEGABLE (DETAILS/SUMMARY) --- */
+
+details.desplegable-formacion {
+    border: 1px solid rgba(0, 0, 0, 0.1);
+    border-radius: 8px;
+    padding: 0.5rem 1rem;
+    margin-top: 1rem;
+    background-color: rgba(0, 0, 0, 0.02); /* Un fondo muy sutil */
+    transition: background-color 0.3s ease;
+}
+
+details.desplegable-formacion[open] {
+    background-color: transparent; /* Al abrirse se limpia */
+}
+
+summary {
+    cursor: pointer;
+    font-weight: 600;
+    color: var(--accent); /* Usamos tu verde corporativo */
+    padding: 0.5rem 0;
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+}
+
+/* Truco para poner una flechita personalizada que rote */
+summary::after {
+    content: "▼"; 
+    font-size: 0.8rem;
+    transition: transform 0.3s ease;
+    margin-left: auto; /* Empuja la flecha a la derecha del todo */
+}
+
+/* Cuando el desplegable está abierto ([open]), rotamos la flecha */
+details[open] summary::after {
+    transform: rotate(180deg);
+}
+
+/* Quitamos el triángulo feo que ponen Safari y Chrome por defecto */
+summary::-webkit-details-marker {
+    display: none;
+}
+
+/* Animación suave de entrada para la lista */
+details[open] ul {
+    animation: fadeIn 0.4s ease-out;
+    margin-top: 1rem;
+    padding-left: 1rem; /* Indentamos un poco la lista */
+}
+
+@keyframes fadeIn {
+    from { opacity: 0; transform: translateY(-10px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
 @media (max-width: 600px) {
     #scrollTopBtn {
         right: 1rem;
