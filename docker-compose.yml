@@ -1,0 +1,8 @@
+version: '3.8'
+services:
+  web-sobre-mi:
+    build: .
+    container_name: contenedor_sobre_mi
+    restart: always
+    ports:
+      - "8081:80" # El 8081 es el que escucha Nginx en el VPS

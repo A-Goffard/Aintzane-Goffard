@@ -1,0 +1,30 @@
+# --- Dependencias (¡Nunca subir esto!) ---
+node_modules/
+npm-debug.log
+yarn-error.log
+
+# --- Archivos de Producción (Se generan al construir) ---
+dist/
+build/
+
+# --- Variables de Entorno y Secretos ---
+.env
+.env.local
+.env.*.local
+
+# --- Archivos del Sistema Operativo ---
+.DS_Store
+Thumbs.db
+
+# --- Configuración de Editor (Opcional, pero recomendado) ---
+.vscode/
+.idea/
+
+# --- SEGURIDAD (Las llaves que creamos antes) ---
+deploy_key
+deploy_key.pub
+*.pem
+*.key
+
+# --- Docker (Si generas logs) ---
+docker-compose.override.yml
