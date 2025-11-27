@@ -1,20 +1,24 @@
-
 :root {
     --bg: #fff;
     --fg: #111;
+    --xx: (0, 0, 0, 0.1);
     --muted: #666;
-    --accent: rgb(0, 187, 84);
+    --accent: rgb(0, 187, 146);
+    --violet: rgb(175, 71, 175);
 }
 
 :root[data-theme="dark"] {
     --bg: #0b0b0f;
     --fg: #e6e6e6;
     --muted: #9a9a9a;
-    --accent: rgb(170, 238, 185);
+    --accent: rgb(170, 238, 221);
+    --violet: #e1b3e6;
 
 }
 
-:root { --header-height: 4rem; }
+:root {
+    --header-height: 4rem;
+}
 
 :root[data-theme="dark"] .invert {
     filter: invert(1) hue-rotate(180deg) saturate(90%);
@@ -34,7 +38,7 @@ html {
     scroll-behavior: smooth;
 }
 
-section[id], 
+section[id],
 .panel {
     /* Aquí está la magia: le decimos al navegador que el "tope" 
        del elemento está más arriba, sumando la altura del header + un poco de aire */
@@ -77,8 +81,10 @@ a {
     text-decoration: none
 }
 
+li,
 p {
-    margin-bottom: 1rem
+    margin-bottom: 1rem;
+    font-size: 1.1rem;
 }
 
 h2,
@@ -86,14 +92,37 @@ h3,
 h4 {
     margin-bottom: 0.5rem;
     margin-top: 0.5rem;
-    color: var(--fg)
+    color: var(--violet)
+}
+
+h2 {
+    font-size: 2rem;
+    color: var(--violet);
+    transition: transform 0.3s, text-shadow 0.3s;
+
+}
+
+h2:hover {
+
+    text-shadow: 0px 0px 15px rgba(233, 31, 206, 0.3);
 }
 
 h1 {
     margin-bottom: 0.5rem;
     margin-top: 0.5rem;
+    color: var(--violet);
+    transition: transform 0.3s, text-shadow 0.3s;
 }
 
+h1:hover {
+
+    text-shadow: 0px 0px 15px rgba(233, 31, 206, 0.3);
+}
+.horizontal {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+}
 .tema {
     background: none;
     border: none;
@@ -102,22 +131,24 @@ h1 {
 
 .container {
     max-width: 900px;
-    margin: 1rem auto; 
+    margin: 1rem auto;
     padding: 0 1rem;
 }
+
 .rrss-container {
     display: flex;
     gap: 0.5rem;
     margin-top: 1rem;
     align-items: center;
 }
+
 .site-header {
     background-color: var(--bg);
-      position: fixed;
-  top: 0;
-  left: 0;
-  right: 0;
-  z-index: 999;
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    z-index: 999;
     border-bottom: 1px solid rgba(0, 0, 0, 0.06)
 }
 
@@ -126,6 +157,7 @@ h1 {
     text-decoration: none;
     color: var(--fg)
 }
+
 .brand-row {
     display: flex;
     height: 2rem;
@@ -169,6 +201,7 @@ h1 {
     color: var(--fg);
     text-decoration: underline;
 }
+
 .hero {
     background: linear-gradient(90deg, rgba(11, 119, 102, 0.06), transparent);
     padding: 3rem 0
@@ -186,7 +219,7 @@ h1 {
 }
 
 .panel {
-    padding: 2rem 0;
+    /* padding: 2rem 0; */
     border-top: 1px solid rgba(0, 0, 0, 0.04)
 }
 
@@ -238,7 +271,9 @@ h1 {
 }
 
 /* evitar que imágenes ensanchen la página en móviles */
-img, picture, video {
+img,
+picture,
+video {
     max-width: 100%;
     height: auto;
     display: block;
@@ -279,7 +314,7 @@ img, picture, video {
 .fitxa:hover {
     border-color: var(--fg);
     transform: scale(1.01);
-    box-shadow: 0px 0px 12px 0 rgb(70, 153, 77), 0px 0px 6px 0 rgb(198, 255, 203), 0px 0px 8px 2px rgb(116, 221, 102);
+    box-shadow: 0px 0px 12px 0 rgb(70, 153, 146), 0px 0px 6px 0 rgb(198, 255, 221), 0px 0px 8px 2px rgb(102, 221, 195);
 }
 
 .fitxa:focus {
@@ -310,35 +345,40 @@ img, picture, video {
     border: none;
     padding: 0;
     cursor: pointer;
-    box-shadow: 0 2px 8px rgba(0,0,0,0.12);
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.12);
     border-radius: 50%;
     transition: opacity 0.2s;
     opacity: 0.85;
 }
+
 #scrollTopBtn:hover {
     opacity: 1;
-    box-shadow: 0 4px 16px rgba(0,0,0,0.18);
+    box-shadow: 0 4px 16px rgba(0, 0, 0, 0.18);
 }
 
 /* --- ESTILOS DEL DESPLEGABLE (DETAILS/SUMMARY) --- */
 
 details.desplegable-formacion {
-    border: 1px solid rgba(0, 0, 0, 0.1);
+    border: 1px solid rgba(243, 184, 243, 0.616);
     border-radius: 8px;
     padding: 0.5rem 1rem;
     margin-top: 1rem;
-    background-color: rgba(0, 0, 0, 0.02); /* Un fondo muy sutil */
+    background-color: rgba(248, 221, 247, 0.02);
+    /* Un fondo muy sutil */
     transition: background-color 0.3s ease;
 }
 
 details.desplegable-formacion[open] {
-    background-color: transparent; /* Al abrirse se limpia */
+    background-color: transparent;
+    /* Al abrirse se limpia */
 }
 
 summary {
     cursor: pointer;
     font-weight: 600;
-    color: var(--accent); /* Usamos tu verde corporativo */
+    font-size: 1.25rem;
+    color: var(--accent);
+    /* Usamos tu verde corporativo */
     padding: 0.5rem 0;
     display: flex;
     align-items: center;
@@ -347,10 +387,11 @@ summary {
 
 /* Truco para poner una flechita personalizada que rote */
 summary::after {
-    content: "▼"; 
-    font-size: 0.8rem;
+    content: "▼";
+    font-size: 1rem;
     transition: transform 0.3s ease;
-    margin-left: auto; /* Empuja la flecha a la derecha del todo */
+    margin-left: auto;
+    /* Empuja la flecha a la derecha del todo */
 }
 
 /* Cuando el desplegable está abierto ([open]), rotamos la flecha */
@@ -367,12 +408,20 @@ summary::-webkit-details-marker {
 details[open] ul {
     animation: fadeIn 0.4s ease-out;
     margin-top: 1rem;
-    padding-left: 1rem; /* Indentamos un poco la lista */
+    padding-left: 1rem;
+    /* Indentamos un poco la lista */
 }
 
 @keyframes fadeIn {
-    from { opacity: 0; transform: translateY(-10px); }
-    to { opacity: 1; transform: translateY(0); }
+    from {
+        opacity: 0;
+        transform: translateY(-10px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
 }
 
 @media (max-width: 600px) {
@@ -382,6 +431,7 @@ details[open] ul {
         width: 2.5rem;
         height: 2.5rem;
     }
+
     #scrollTopBtn svg {
         width: 2.5rem;
         height: 2.5rem;
