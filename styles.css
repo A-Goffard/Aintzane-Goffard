@@ -3,8 +3,9 @@
     --fg: #111;
     --xx: (0, 0, 0, 0.1);
     --muted: #666;
-    --accent: rgb(0, 187, 146);
-    --violet: rgb(175, 71, 175);
+    --accent: rgb(192, 47, 197);
+    --violet: rgb(146, 37, 146);
+    --rosita: rgb(255, 217, 250);
     --link: #50083f;
 }
 
@@ -12,8 +13,9 @@
     --bg: #0b0b0f;
     --fg: #e6e6e6;
     --muted: #9a9a9a;
-    --accent: rgb(170, 238, 221);
+    --accent: rgb(230, 186, 255);
     --violet: #e1b3e6;
+    --rosita: rgb(94, 12, 83);
     --link: #ffdef7;
 }
 
@@ -69,12 +71,30 @@ main {
 
 button {
     border: 1px solid var(--accent);
-
-
     border-radius: 6px;
     padding: 1rem 1.5rem;
     font-size: 1rem;
     cursor: pointer
+}
+
+.btn-volver {
+  display: inline-block;
+  margin-top: 1.5rem;
+  padding: 0.65rem 1.25rem;
+  border: 1px solid var(--accent);
+  border-radius: 6px;
+  color: var(--violet);
+  background: transparent;
+  font-size: 0.95rem;
+  font-weight: 500;
+  text-decoration: none;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.btn-volver:hover {
+  background: var(--rosita);
+  color:var (--violet);
 }
 
 a {
@@ -310,13 +330,16 @@ video {
     padding: 1rem;
     border-radius: 8px;
     transition: transform 0.3s cubic-bezier(0.3, 0, 0.2, 1), border-color 0.3s cubic-bezier(0.3, 0, 0.2, 1), box-shadow 0.3s cubic-bezier(0.3, 0, 0.2, 1);
+}
+
+.fitxalink {
     cursor: pointer;
 }
 
 .fitxalink:hover {
     border-color: var(--fg);
     transform: scale(1.01);
-    box-shadow: 0px 0px 12px 0 rgb(70, 153, 146), 0px 0px 6px 0 rgb(198, 255, 221), 0px 0px 8px 2px rgb(102, 221, 195);
+    box-shadow: 0px 0px 12px 0 rgb(153, 70, 149), 0px 0px 6px 0 rgb(255, 198, 252), 0px 0px 8px 2px rgb(236, 136, 231);
 }
 
 .fitxalink:focus {
@@ -413,6 +436,31 @@ details[open] ul {
     /* Indentamos un poco la lista */
 }
 
+.footer-bottom {
+  margin-top: 0.5rem;
+  text-align: center;
+}
+
+.footer-link-geobizi {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.35rem;
+  text-decoration: none;
+  font-weight: 500;
+  vertical-align: middle;
+}
+
+.logo-hojitas {
+  width: 28px;
+  height: auto;
+  display: inline-block;
+  vertical-align: middle;
+  transition: transform 0.2s ease;
+}
+
+.footer-link-geobizi:hover .logo-hojitas {
+  transform: rotate(5deg) scale(1.05);
+}
 @keyframes fadeIn {
     from {
         opacity: 0;
