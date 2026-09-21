@@ -16,15 +16,18 @@ jobs:
           script: |
             # Creamos la carpeta si no existe
             mkdir -p ~/web-sobre-mi
-            cd ~/web-sobre-mi
+                        cd ~/web-sobre-mi
+                        
+                        if [ ! -d ".git" ]; then
+                          git clone https://github.com/A-Goffard/Aintzane-Goffard.git .
+                        else
+                          git fetch origin main
+                          git reset --hard origin/main
+                        fi
             
-            # Si es la primera vez, clonamos. Si no, actualizamos.
-            if [ ! -d ".git" ]; then
-              git clone https://github.com/A-Goffard/Aintzane-Goffard.git .
-            else
-              git pull origin main
-            fi
+            # Reconstruir FORZANDO la invalidación de capas y recreando el contenedor
+            docker compose build --no-cache
+            docker compose down
+            docker compose up -d --remove-orphans
             
-            # Levantamos Docker
-            docker compose up -d --build --remove-orphans
             docker image prune -f
