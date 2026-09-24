@@ -1,26 +1,38 @@
 :root {
-    --bg: #fff;
-    --fg: #111;
-    --xx: (0, 0, 0, 0.1);
-    --muted: #666;
-    --accent: rgb(192, 47, 197);
-    --violet: rgb(146, 37, 146);
-    --rosita: rgb(255, 217, 250);
-    --link: #50083f;
+    --bg: #f9f8f9;
+    /* Lino con un toque ceniza */
+    --fg: #423442;
+    --muted: #64636e;
+
+    --accent: #6f5583;
+    /* Brezo / ciruela apagado (nada chillón) */
+    --violet: #55346e;
+    --rosita: #ece7ef;
+    /* Fondo de tarjetas acolchado */
+    --link: #3f5569;
+    /* Azul pizarra para links */
+
+    --border-card: #ded8e3;
+    --shadow-subtle: rgba(94, 75, 109, 0.08);
 }
 
 :root[data-theme="dark"] {
-    --bg: #0b0b0f;
-    --fg: #e6e6e6;
-    --muted: #9a9a9a;
-    --accent: rgb(230, 186, 255);
-    --violet: #e1b3e6;
-    --rosita: rgb(94, 12, 83);
-    --link: #ffdef7;
+    --bg: #352a35;
+    --fg: #e6dce5;
+    --muted: #9995a3;
+
+    --accent: #ac92c9;
+    --violet: #b9a5d1;
+    --rosita: #221f28;
+    --link: #93b2cc;
+
+    --border-card: #2f2a38;
+    --shadow-subtle: rgba(0, 0, 0, 0.4);
 }
 
 :root {
     --header-height: 4rem;
+
 }
 
 :root[data-theme="dark"] .invert {
@@ -54,11 +66,12 @@ body {
 }
 
 body {
-    font-family: system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial;
+    font-family: 'Plus Jakarta Sans', system-ui, -apple-system, sans-serif;
     margin: 1rem;
     color: var(--fg);
     background: var(--bg);
-    line-height: 1.45;
+    line-height: 1.65;
+    letter-spacing: 0.01em;
     display: flex;
     flex-direction: column;
     min-height: 100vh;
@@ -78,23 +91,23 @@ button {
 }
 
 .btn-volver {
-  display: inline-block;
-  margin-top: 1.5rem;
-  padding: 0.65rem 1.25rem;
-  border: 1px solid var(--accent);
-  border-radius: 6px;
-  color: var(--violet);
-  background: transparent;
-  font-size: 0.95rem;
-  font-weight: 500;
-  text-decoration: none;
-  cursor: pointer;
-  transition: all 0.2s ease;
+    display: inline-block;
+    margin-top: 1.5rem;
+    padding: 0.65rem 1.25rem;
+    border: 1px solid var(--accent);
+    border-radius: 6px;
+    color: var(--violet);
+    background: transparent;
+    font-size: 0.95rem;
+    font-weight: 500;
+    text-decoration: none;
+    cursor: pointer;
+    transition: all 0.2s ease;
 }
 
 .btn-volver:hover {
-  background: var(--rosita);
-  color:var (--violet);
+    background: var(--rosita);
+    color: var (--violet);
 }
 
 a {
@@ -139,11 +152,13 @@ h1:hover {
 
     text-shadow: 0px 0px 15px rgba(233, 31, 206, 0.3);
 }
+
 .horizontal {
     display: flex;
     align-items: center;
     gap: 0.5rem;
 }
+
 .tema {
     background: none;
     border: none;
@@ -326,9 +341,12 @@ video {
 .fitxa,
 .fitxalink {
     flex: 1 1 220px;
-    border: 1px solid var(--accent);
     padding: 1rem;
-    border-radius: 8px;
+    background: var(--rosita);
+    border: 1px solid var(--border-card);
+    border-radius: 12px;
+    /* Bordes ligeramente más redondeados */
+    box-shadow: 0 2px 6px var(--shadow-subtle);
     transition: transform 0.3s cubic-bezier(0.3, 0, 0.2, 1), border-color 0.3s cubic-bezier(0.3, 0, 0.2, 1), box-shadow 0.3s cubic-bezier(0.3, 0, 0.2, 1);
 }
 
@@ -337,14 +355,47 @@ video {
 }
 
 .fitxalink:hover {
-    border-color: var(--fg);
-    transform: scale(1.01);
-    box-shadow: 0px 0px 12px 0 rgb(153, 70, 149), 0px 0px 6px 0 rgb(255, 198, 252), 0px 0px 8px 2px rgb(236, 136, 231);
+    border-color: var(--accent);
+    transform: translateY(-2px);
+    /* Desplazamiento vertical sutil en vez de zoom */
+    box-shadow: 0 6px 14px var(--shadow-subtle);
 }
 
 .fitxalink:focus {
     outline: 3px solid rgba(var(--accent-rgb), 0.25);
     outline-offset: 3px;
+}
+
+/* Asegurar que la ficha sea el contenedor de referencia para la posición */
+.fitxalink {
+    position: relative;
+    padding-bottom: 2.2rem;
+    /* Deja un poco de margen abajo para que el texto no toque el icono */
+}
+
+/* Icono de enlace/flecha exterior en la esquina inferior derecha */
+.fitxalink::after {
+    content: "";
+    position: absolute;
+    right: 1rem;
+    bottom: 1rem;
+    width: 1.15rem;
+    height: 1.15rem;
+    background-color: var(--accent);
+    /* Se colorea automáticamente con tu paleta */
+    opacity: 0.7;
+    transition: transform 0.2s ease, opacity 0.2s ease, background-color 0.2s ease;
+
+    /* Dibujo del icono en SVG vectorial limpio (flecha diagonal de enlace externo) */
+    -webkit-mask: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='currentColor' stroke-width='2.2' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpath d='M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6'%3E%3C/path%3E%3Cpolyline points='15 3 21 3 21 9'%3E%3C/polyline%3E%3Cline x1='10' y1='14' x2='21' y2='3'%3E%3C/line%3E%3C/svg%3E") no-repeat center / contain;
+    mask: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='currentColor' stroke-width='2.2' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpath d='M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6'%3E%3C/path%3E%3Cpolyline points='15 3 21 3 21 9'%3E%3C/polyline%3E%3Cline x1='10' y1='14' x2='21' y2='3'%3E%3C/line%3E%3C/svg%3E") no-repeat center / contain;
+}
+
+/* Efecto al pasar el cursor por encima de la tarjeta con enlace */
+.fitxalink:hover::after {
+    opacity: 1;
+    transform: translate(2px, -2px);
+    /* Pequeño desplazamiento interactivo */
 }
 
 .imagenes-proyecto {
@@ -384,19 +435,17 @@ video {
 /* --- ESTILOS DEL DESPLEGABLE (DETAILS/SUMMARY) --- */
 
 details.desplegable-formacion {
-    border: 1px solid rgba(243, 184, 243, 0.616);
-    border-radius: 8px;
+    border: 1px solid var(--border-card);
+    border-radius: 12px;
+    background-color: var(--rosita);
     padding: 0.5rem 1rem;
     margin-top: 1rem;
-    background-color: rgba(248, 221, 247, 0.02);
+
     /* Un fondo muy sutil */
     transition: background-color 0.3s ease;
 }
 
-details.desplegable-formacion[open] {
-    background-color: transparent;
-    /* Al abrirse se limpia */
-}
+
 
 summary {
     cursor: pointer;
@@ -437,30 +486,31 @@ details[open] ul {
 }
 
 .footer-bottom {
-  margin-top: 0.5rem;
-  text-align: center;
+    margin-top: 0.5rem;
+    text-align: center;
 }
 
 .footer-link-geobizi {
-  display: inline-flex;
-  align-items: center;
-  gap: 0.35rem;
-  text-decoration: none;
-  font-weight: 500;
-  vertical-align: middle;
+    display: inline-flex;
+    align-items: center;
+    gap: 0.35rem;
+    text-decoration: none;
+    font-weight: 500;
+    vertical-align: middle;
 }
 
 .logo-hojitas {
-  width: 28px;
-  height: auto;
-  display: inline-block;
-  vertical-align: middle;
-  transition: transform 0.2s ease;
+    width: 28px;
+    height: auto;
+    display: inline-block;
+    vertical-align: middle;
+    transition: transform 0.2s ease;
 }
 
 .footer-link-geobizi:hover .logo-hojitas {
-  transform: rotate(5deg) scale(1.05);
+    transform: rotate(5deg) scale(1.05);
 }
+
 @keyframes fadeIn {
     from {
         opacity: 0;
