@@ -9,7 +9,7 @@
     --violet: #55346e;
     --rosita: #ece7ef;
     /* Fondo de tarjetas acolchado */
-    --link: #3f5569;
+    --link: #a3438e;
     /* Azul pizarra para links */
 
     --border-card: #ded8e3;
@@ -24,7 +24,7 @@
     --accent: #ac92c9;
     --violet: #b9a5d1;
     --rosita: #221f28;
-    --link: #93b2cc;
+    --link: #cc93cc;
 
     --border-card: #2f2a38;
     --shadow-subtle: rgba(0, 0, 0, 0.4);
@@ -542,6 +542,9 @@ details[open] ul {
         font-size: 1.5rem;
         margin-bottom: 0;
     }
+    #about {
+        margin-top: 4rem;
+}
 }
 
 @media (prefers-reduced-motion:reduce) {
