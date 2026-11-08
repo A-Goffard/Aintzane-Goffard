@@ -1,0 +1,6 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64">
+  <rect width="64" height="64" rx="16" fill="#55346e"/>
+  <path d="M8 44c8-4 16-4 24 0s16 4 24 0" stroke="#c9b3e0" stroke-width="3" fill="none" stroke-linecap="round"/>
+  <path d="M8 52c8-4 16-4 24 0s16 4 24 0" stroke="#8f6fae" stroke-width="3" fill="none" stroke-linecap="round"/>
+  <text x="32" y="36" text-anchor="middle" font-family="Lato, Segoe UI, Arial, sans-serif" font-weight="700" font-size="24" fill="#fff" letter-spacing="1">AG</text>
+</svg>

@@ -1,8 +1,14 @@
-version: '3.8'
+# Nombre de proyecto fijo: no depende de la carpeta y no se mezcla con Geobizi
+name: aintzanegoffard
+
 services:
-  web-sobre-mi:
-    build: .
-    container_name: contenedor_sobre_mi
-    restart: always
+  frontend:
+    build:
+      context: ./frontend
+      dockerfile: Dockerfile.prod
+    image: aintzanegoffard-frontend
+    container_name: aintzane_frontend
     ports:
-      - "8081:80" # El 8081 es el que escucha Nginx en el VPS
+      # Solo accesible desde el propio VPS: el Nginx del sistema hace de proxy (con SSL)
+      - "127.0.0.1:8081:80"
+    restart: always

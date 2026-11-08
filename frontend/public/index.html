@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width,initial-scale=1.0">
+  <link rel="icon" type="image/svg+xml" href="<%= BASE_URL %>favicon.svg">
+  <meta name="theme-color" content="#f8f5fa" media="(prefers-color-scheme: light)">
+  <meta name="theme-color" content="#1d1722" media="(prefers-color-scheme: dark)">
+  <title>Aintzane Goffard | Docencia, STEAM, EdTech y Ciencia</title>
+
+  <!-- Tema guardado antes de pintar, para evitar el parpadeo claro/oscuro -->
+  <script>
+    try {
+      var t = localStorage.getItem('tema');
+      if (t === 'dark' || t === 'light') document.documentElement.setAttribute('data-theme', t);
+    } catch (e) {}
+  </script>
+
+  <!-- SEO base: lo que leen los buscadores y las redes antes de ejecutar Vue -->
+  <meta name="description" content="Portfolio de Aintzane Goffard: docente, diseñadora pedagógica STEAM y geóloga. Diseño inclusivo (DUA), formación docente, desarrollo web y divulgación científica.">
+  <meta name="author" content="Aintzane Goffard">
+  <link rel="canonical" href="https://aintzanegoffard.com/">
+  <meta property="og:site_name" content="Aintzane Goffard">
+  <meta property="og:type" content="profile">
+  <meta property="og:locale" content="es_ES">
+  <meta property="og:url" content="https://aintzanegoffard.com/">
+  <meta property="og:title" content="Aintzane Goffard | Educación, Tecnología y Ciencia">
+  <meta property="og:description" content="Docente y diseñadora pedagógica STEAM, geóloga y desarrolladora web.">
+  <meta property="og:image" content="https://aintzanegoffard.com/imagenes/og-aintzane.jpg">
+  <meta property="og:image:width" content="1200">
+  <meta property="og:image:height" content="630">
+  <meta property="og:image:alt" content="Aintzane Goffard sonriendo bajo un árbol">
+  <meta name="twitter:card" content="summary_large_image">
+
+  <link rel="preload" as="image" type="image/avif" href="<%= BASE_URL %>imagenes/aintzane.avif">
+
+  <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "Person",
+      "@id": "https://aintzanegoffard.com/#person",
+      "name": "Aintzane Goffard Sevillano",
+      "url": "https://aintzanegoffard.com/",
+      "image": "https://aintzanegoffard.com/imagenes/aintzane.jpg",
+      "jobTitle": "Docente y diseñadora pedagógica STEAM",
+      "email": "mailto:aintzagoffard@gmail.com",
+      "knowsLanguage": ["es", "eu", "en"],
+      "alumniOf": [
+        { "@type": "CollegeOrUniversity", "name": "Universidad del País Vasco / Euskal Herriko Unibertsitatea" },
+        { "@type": "CollegeOrUniversity", "name": "Universidad Internacional de Valencia" }
+      ],
+      "worksFor": { "@type": "Organization", "name": "Geobizi", "url": "https://www.geobizi.com/" },
+      "sameAs": [
+        "https://www.linkedin.com/in/aintzane-goffard-sevillano",
+        "https://github.com/A-Goffard"
+      ]
+    }
+  </script>
+</head>
+
+<body>
+  <noscript>
+    <strong>Aintzane Goffard: docente, diseñadora pedagógica STEAM y geóloga. Para ver esta web necesitas activar JavaScript.</strong>
+  </noscript>
+  <div id="app"></div>
+  <!-- built files will be auto injected -->
+</body>
+
+</html>
