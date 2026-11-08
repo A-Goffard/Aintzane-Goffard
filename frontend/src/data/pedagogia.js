@@ -7,7 +7,7 @@ export const areasPedagogia = [
   },
   {
     titulo: 'Formación docente y STEAM',
-    texto: 'Talleres para profesorado centrados en la experimentación científica, los laboratorios prácticos, la transposición didáctica y las situaciones de aprendizaje manipulativas e interdisciplinares.'
+    texto: 'Formo a docentes para llevar el enfoque STEAM y el DUA a sus clases, integrar la educación ambiental de forma transversal en el currículo y enseñar ciencia de manera práctica y eficaz, con experimentos que funcionan con niños y niñas.'
   },
   {
     titulo: 'Formación para el Empleo',
