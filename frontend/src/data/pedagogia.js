@@ -3,7 +3,8 @@ export const areasPedagogia = [
   {
     titulo: 'Neurodivergencias e inclusión',
     entidad: 'TransversaLab',
-    texto: 'Charlas y formaciones para familias y docentes sobre neurodivergencias, diversidad en el aprendizaje y estrategias educativas inclusivas, adaptadas a cada público.'
+    texto: 'Charlas y formaciones para familias y docentes sobre neurodivergencias, diversidad en el aprendizaje y estrategias educativas inclusivas, adaptadas a cada público.',
+    enlace: 'https://transversalab.com'
   },
   {
     titulo: 'Formación docente y STEAM',

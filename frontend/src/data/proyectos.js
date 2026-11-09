@@ -7,6 +7,22 @@
 
 export const proyectos = [
   {
+    slug: 'web-transversalab',
+    titulo: 'Web de TransversaLab',
+    anio: '2026',
+    estado: 'Publicado · en producción',
+    tono: 'violeta',
+    sigla: 'TLab',
+    tecnologias: ['Vue.js', 'Vite SSG', 'Docker', 'Nginx', 'Accesibilidad'],
+    resumen: 'Web de mi proyecto de neuroeducación, DUA y neurodiversidad: generada como HTML estático, accesible y sin cookies.',
+    enlace: { url: 'https://transversalab.com', texto: 'transversalab.com' },
+    descripcion: [
+      'Web de TransversaLab, mi proyecto de formación, acompañamiento y asesoramiento en neuroeducación, Diseño Universal para el Aprendizaje (DUA) y neurodiversidad para centros, docentes, familias y personas adultas.',
+      'Cada página se genera como HTML estático completo (vite-ssg) y Nginx devuelve errores 404 reales, para que los buscadores indexen bien. Usa la tipografía Atkinson Hyperlegible Next, pensada para baja visión, cumple el contraste WCAG AA en modo claro y oscuro y no tiene cookies, analítica ni llamadas a terceros.'
+    ],
+    rol: 'Identidad visual, contenidos, diseño y desarrollo completo, y despliegue continuo con GitHub Actions en mi VPS.'
+  },
+  {
     slug: 'web-geobizi',
     titulo: 'Web de Geobizi',
     anio: '2025 – Actualidad',

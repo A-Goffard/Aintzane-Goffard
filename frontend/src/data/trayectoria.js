@@ -7,7 +7,8 @@ export const trayectoria = [
     entidad: 'TransversaLab',
     puesto: 'Fundadora y asesora pedagógica',
     area: 'docencia',
-    texto: 'Iniciativa de divulgación y formación sobre neurodivergencias, educación inclusiva e innovación pedagógica. Asesoramiento a familias y centros, diseño curricular bajo el marco DUA y formación del profesorado en metodologías STEAM.'
+    texto: 'Iniciativa de divulgación y formación sobre neurodivergencias, educación inclusiva e innovación pedagógica. Asesoramiento a familias y centros, diseño curricular bajo el marco DUA y formación del profesorado en metodologías STEAM.',
+    enlace: 'https://transversalab.com'
   },
   {
     periodo: '2019 – Actualidad',
