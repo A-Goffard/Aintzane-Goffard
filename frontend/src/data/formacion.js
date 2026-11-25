@@ -24,7 +24,7 @@ export const especializaciones = [
     texto: 'Didáctica de las ciencias, metodologías STEAM, formación de formadores y entornos de teleformación.'
   },
   {
-    icono: '/imagenes/iconos/pintura.png',
+    icono: '/imagenes/iconos/desarrollo_pc.png',
     titulo: 'Tecnología y datos',
     texto: 'Desarrollo web, Python, SQL, ciencia de datos, gamificación, diseño de interfaces y metodologías ágiles.'
   },

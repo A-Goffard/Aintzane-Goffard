@@ -43,7 +43,7 @@ export const pilares = [
   {
     id: 'tecnologia',
     titulo: 'EdTech y desarrollo',
-    icono: '/imagenes/iconos/pintura.png',
+    icono: '/imagenes/iconos/desarrollo_pc.png',
     texto: 'Desarrollo webs, plataformas y recursos interactivos con Python, Vue.js y SQL. Tecnología que resuelve problemas reales y mejora la experiencia de aprender.'
   }
 ]
