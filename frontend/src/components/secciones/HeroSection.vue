@@ -42,7 +42,7 @@
         </div>
         <span class="hero__badge hero__badge--a">DUA · Neuroeducación</span>
         <span class="hero__badge hero__badge--b">STEAM · Ciencia</span>
-        <span class="hero__badge hero__badge--c">Vue · Python</span>
+        <span class="hero__badge hero__badge--c">Full Stack</span>
       </div>
     </div>
 
